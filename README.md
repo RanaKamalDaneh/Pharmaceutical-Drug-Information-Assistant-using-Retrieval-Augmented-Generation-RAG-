@@ -2,59 +2,72 @@
 # 💊 Pharmaceutical Multilingual RAG System
 ### نظام استرجاع المعلومات الصيدلانية المدعم بالتوليد (ثنائي اللغة)
 
-نظام متطور يعتمد على تقنية **RAG (Retrieval-Augmented Generation)** للإجابة على الاستفسارات المتعلقة بالأدوية باللغتين **العربية والإنجليزية**. يستخدم النظام نماذج لغوية محلية عبر **Ollama** لضمان الخصوصية والسرعة.
+A professional, production-ready **Retrieval-Augmented Generation (RAG)** system designed to provide accurate pharmaceutical drug information in both **Arabic and English**. The system integrates official **openFDA data**, uses **ChromaDB** for vector storage, and supports both local (**Ollama**) and cloud-based (**OpenAI GPT-4o**) models.
 
 ---
 
 ## 🚀 الميزات الرئيسية (Key Features)
 
-- **دعم ثنائي اللغة (Multilingual Support):** معالجة الاستفسارات والبيانات باللغتين العربية والإنجليزية بشكل متكامل.
-- **تضمينات Ollama المحلية (Local Embeddings):** استخدام نموذج `nomic-embed-text` لتوليد متجهات نصية عالية الدقة.
-- **معالجة متقدمة للنص العربي (Arabic NLP):** تنظيف وتوحيد النصوص العربية لضمان دقة البحث.
-- **قاعدة بيانات FAISS:** محرك بحث شعاعي فائق السرعة للبحث عن المعلومات ذات الصلة.
-- **هيكلية جاهزة للإنتاج (Production Ready):** نظام إعدادات مركزي، تسجيل أحداث (Logging)، ومعالجة أخطاء شاملة.
+- **Multilingual Support (دعم ثنائي اللغة):** Full processing of queries and data in both Arabic and English.
+- **Official Data Integration:** Automatically fetches the latest drug labels from the **openFDA API**.
+- **Hybrid AI Power:** Switch seamlessly between local models (Ollama) and high-performance cloud models (OpenAI GPT-4o).
+- **Advanced Arabic NLP:** Specialized normalization and cleaning for Arabic text using `PyArabic` to ensure high retrieval accuracy.
+- **ChromaDB Vector Store:** Industry-standard vector database for fast, persistent, and reliable semantic search.
+- **Production-Ready:** Centralized configuration, comprehensive logging, and automated database rebuilding.
 
 ---
 
 ## 🛠️ هيكلية المشروع (Project Structure)
 
-- `data/`: قاعدة بيانات الأدوية (SIDER + Bilingual JSON).
-- `src/config.py`: الإعدادات المركزية للنظام.
-- `src/data_loader.py`: محرك تحميل ودمج البيانات.
-- `src/text_preprocessor.py`: معالج النصوص (تنظيف وتجزئة).
-- `src/embedding_generator.py`: مولد المتجهات عبر Ollama.
-- `src/vector_store.py`: مدير قاعدة البيانات الشعاعية FAISS.
-- `src/llm_integration.py`: واجهة الربط مع النماذج اللغوية (Ollama/OpenAI).
-- `src/qa_pipeline.py`: المحرك الرئيسي لعملية السؤال والجواب.
-- `app.py`: واجهة المستخدم الرسومية البسيطة (CLI).
+- `data/`: Local bilingual datasets and drug information.
+- `src/config.py`: Centralized system configuration.
+- `src/data_loader.py`: Handles FDA API fetching and local data merging.
+- `src/text_preprocessor.py`: Text cleaning and semantic chunking.
+- `src/embedding_generator.py`: Generates vectors via Ollama or OpenAI.
+- `src/vector_store.py`: Manages the **ChromaDB** collection.
+- `src/llm_integration.py`: Connects to LLMs (GPT-4o / Llama3).
+- `src/qa_pipeline.py`: Orchestrates the RAG flow (Retrieve -> Generate).
+- `app.py`: Professional Command-Line Interface (CLI).
 
 ---
 
 ## 💻 التشغيل السريع (Quick Start)
 
-### 1. المتطلبات (Prerequisites)
-- تثبيت برنامج **Ollama** وتحميل النماذج التالية:
+### 1. Prerequisites (المتطلبات)
+- Install **Ollama** and pull models (for local use):
   ```bash
   ollama pull nomic-embed-text
   ollama pull llama3
   ```
+- Obtain an **OpenAI API Key** (for cloud use).
 
-### 2. التثبيت (Installation)
+### 2. Installation (التثبيت)
 ```bash
+git clone https://github.com/RanaKamalDaneh/Pharmaceutical-Drug-Information-Assistant-using-Retrieval-Augmented-Generation-RAG-.git
+cd Pharmaceutical-Drug-Information-Assistant-using-Retrieval-Augmented-Generation-RAG-
 pip install -r requirements.txt
 ```
 
-### 3. التشغيل (Run)
-لأول مرة (لبناء قاعدة البيانات):
+### 3. Configuration (الإعدادات)
+Create a `.env` file in the root directory:
+```env
+LLM_PROVIDER=openai
+EMBEDDING_PROVIDER=openai
+OPENAI_API_KEY=your_key_here
+DRUG_API_URL=https://api.fda.gov/drug/label.json?limit=100
+```
+
+### 4. Running the System (التشغيل)
+Build the database for the first time:
 ```bash
 python app.py --rebuild
 ```
-للاستخدام العادي:
+Start chatting:
 ```bash
 python app.py
 ```
 
 ---
 
-## 📖 للمزيد من التفاصيل
-يرجى مراجعة ملف **[PROJECT_DETAILS.md](PROJECT_DETAILS.md)** للحصول على شرح تقني مفصل ورسم بياني لآلية العمل.
+## 📖 Technical Documentation
+For a deep dive into the architecture and workflow diagrams, please refer to **[PROJECT_DETAILS.md](PROJECT_DETAILS.md)**.
