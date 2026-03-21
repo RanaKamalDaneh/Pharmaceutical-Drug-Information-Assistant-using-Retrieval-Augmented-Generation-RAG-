@@ -1,5 +1,5 @@
 
-# 💊 Pharmaceutical Drug Information Assistant using Retrieval-Augmented Generation (RAG)
+# 💊 Pharmaceutical Multilingual RAG System
 ### نظام استرجاع المعلومات الصيدلانية المدعم بالتوليد (ثنائي اللغة)
 
 نظام متطور يعتمد على تقنية **RAG (Retrieval-Augmented Generation)** للإجابة على الاستفسارات المتعلقة بالأدوية باللغتين **العربية والإنجليزية**. يستخدم النظام نماذج لغوية محلية عبر **Ollama** لضمان الخصوصية والسرعة.

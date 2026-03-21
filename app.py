@@ -25,9 +25,9 @@ def main():
     # Update config with CLI arguments
     Config.LLM_PROVIDER = args.llm
 
-    print("\n" + "="*80)
-    print("PHARMACEUTICAL DRUG INFORMATION ASSISTANT (RAG)")
-    print("="*80)
+    print("\n" + "="*50)
+    print("PHARMACEUTICAL RAG SYSTEM (MULTILINGUAL)")
+    print("="*50)
     print(f"Provider: {args.llm}")
     print(f"Embeddings: {Config.EMBEDDING_MODEL}")
     print(f"Rebuild Index: {args.rebuild}")
