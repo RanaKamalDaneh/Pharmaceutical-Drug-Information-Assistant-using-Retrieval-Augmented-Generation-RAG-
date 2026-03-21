@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Environment Variables (SENSITIVE)
+.env
+
+# Vector Databases and Large Files
+chroma_db/
+faiss_index.bin
+chunks.pkl
+*.log
+
+# IDEs
+.vscode/
+.idea/

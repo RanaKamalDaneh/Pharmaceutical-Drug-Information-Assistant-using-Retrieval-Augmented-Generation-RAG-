@@ -1,0 +1,49 @@
+
+[
+  {
+    "drugbank_id": "DB00316",
+    "name_en": "Acetaminophen",
+    "name_ar": "باراسيتامول",
+    "indications_en": "Fever, Mild to moderate pain",
+    "indications_ar": "الحمى، الآلام الخفيفة إلى المتوسطة",
+    "side_effects_en": "Nausea, stomach pain, loss of appetite, itching, rash",
+    "side_effects_ar": "الغثيان، آلام المعدة، فقدان الشهية، الحكة، الطفح الجلدي",
+    "warnings_en": "Liver damage if taken in large amounts",
+    "warnings_ar": "تلف الكبد إذا تم تناوله بكميات كبيرة"
+  },
+  {
+    "drugbank_id": "DB01050",
+    "name_en": "Ibuprofen",
+    "name_ar": "إيبوبروفين",
+    "indications_en": "Pain, fever, inflammation",
+    "indications_ar": "الألم، الحمى، الالتهاب",
+    "side_effects_en": "Stomach upset, nausea, vomiting, headache, diarrhea",
+    "side_effects_ar": "اضطراب المعدة، الغثيان، القيء، الصداع، الإسهال",
+    "warnings_en": "May increase risk of heart attack or stroke",
+    "warnings_ar": "قد يزيد من خطر الإصابة بنوبة قلبية أو سكتة دماغية"
+  },
+  {
+    "drugbank_id": "DB01060",
+    "name_en": "Amoxicillin",
+    "name_ar": "أموكسيسيلين",
+    "indications_en": "Bacterial infections",
+    "indications_ar": "الالتهابات البكتيرية",
+    "side_effects_en": "Diarrhea, nausea, skin rash, yeast infection",
+    "side_effects_ar": "الإسهال، الغثيان، طفح جلدي، عدوى الخميرة",
+    "warnings_en": "Do not use if allergic to penicillin",
+    "warnings_ar": "لا تستخدمه إذا كان لديك حساسية من البنسلين"
+  },
+  {
+    "drugbank_id": "DB00945",
+    "name_en": "Aspirin",
+    "name_ar": "أسبرين",
+    "indications_en": "Pain, fever, blood thinner, prevention of cardiovascular disease",
+    "indications_ar": "الألم، الحمى، مسيل للدم، الوقاية من أمراض القلب والأوعية الدموية",
+    "dosage_en": "Adults: 325mg to 650mg every 4 to 6 hours as needed. For heart protection: 75mg to 81mg daily.",
+    "dosage_ar": "للبالغين: 325 مجم إلى 650 مجم كل 4 إلى 6 ساعات حسب الحاجة. لحماية القلب: 75 مجم إلى 81 مجم يوميًا.",
+    "side_effects_en": "Stomach upset, heartburn, nausea, increased bleeding tendency",
+    "side_effects_ar": "اضطراب المعدة، حرقة الفؤاد، الغثيان",
+    "warnings_en": "Do not use in children with viral infections due to Reye's syndrome risk",
+    "warnings_ar": "لا يستخدم للأطفال المصابين بعدوى فيروسية بسبب خطر الإصابة بمتلازمة راي"
+  }
+]
