@@ -7,38 +7,40 @@
 
 ## 🏗️ البنية التحتية للمشروع (System Architecture)
 
-يعتمد النظام على هيكلية **RAG (Retrieval-Augmented Generation)** والتي تعمل عبر مسارين رئيسيين:
-1.  **مسار بناء الفهرس (Indexing Pipeline):** لتحضير البيانات وتخزينها.
-2.  **مسار الاستعلام (Query Pipeline):** لمعالجة سؤال المستخدم واسترجاع الإجابة.
+يعتمد النظام على هيكلية **RAG (Retrieval-Augmented Generation)** متطورة تربط بين البيانات الطبية الرسمية وقدرات التوليد اللغوي. يعمل النظام من خلال ثلاث مراحل أساسية تضمن دقة الإجابة الطبية.
 
-### 📉 رسم بياني لآلية العمل (Workflow Diagram)
+### 📉 رسم بياني شامل لآلية العمل (End-to-End Workflow)
 
 ```mermaid
 graph TD
-    subgraph "1. تحضير البيانات (Data Preparation)"
-        A[SIDER Dataset - English] --> C[Data Loader]
-        B[Bilingual JSON - EN/AR] --> C
-        C --> D[Text Preprocessor]
-        D --> E[Semantic Chunker]
+    subgraph "المرحلة 1: بناء المعرفة (Offline Indexing)"
+        A1[OpenFDA API] --> B1[Data Loader]
+        A2[Bilingual JSON] --> B1
+        A3[SIDER Datasets] --> B1
+        B1 --> C1[Text Preprocessor]
+        C1 --> D1[Semantic Chunker]
+        D1 --> E1[Embedding Generator]
+        E1 --> F1[(ChromaDB Vector Store)]
     end
 
-    subgraph "2. بناء الفهرس (Vector Storage)"
-        E --> F[Ollama Embedding Model]
-        F --> G[FAISS Vector Index]
-        G --> H[(Disk Storage)]
+    subgraph "المرحلة 2: استرجاع المعلومات (Online Retrieval)"
+        G2[User Question - AR/EN] --> H2[Web Interface]
+        H2 --> I2[Query Preprocessor]
+        I2 --> J2[Query Embedder]
+        J2 --> K2[Vector Similarity Search]
+        F1 --> K2
+        K2 --> L2[Relevant Context Chunks]
     end
 
-    subgraph "3. استعلام المستخدم (User Querying)"
-        I[User Query - AR/EN] --> J[Query Embedder]
-        J --> K[FAISS Similarity Search]
-        K --> L[Retrieved Context Chunks]
+    subgraph "المرحلة 3: التوليد والرد (LLM Generation)"
+        L2 --> M3[Prompt Constructor]
+        G2 --> M3
+        M3 --> N3[LLM - GPT-4o / Llama3]
+        N3 --> O3[Final Accurate Answer]
     end
 
-    subgraph "4. توليد الإجابة (Answer Generation)"
-        L --> M[LLM Interface - Llama3/GPT]
-        I --> M
-        M --> N[Final Answer - AR/EN]
-    end
+    style F1 fill:#f9f,stroke:#333,stroke-width:4px
+    style O3 fill:#00ff00,stroke:#333,stroke-width:2px
 ```
 
 ---
@@ -99,5 +101,6 @@ graph TD
 1.  **الخصوصية:** يعمل محلياً بالكامل عبر Ollama.
 2.  **الدقة:** يستخدم تقنيات متقدمة لمعالجة اللغة العربية.
 3.  **المرونة:** سهولة تبديل النماذج أو قواعد البيانات.
-4.  **الأداء:** البحث الشعاعي عبر FAISS يضمن سرعة عالية حتى مع قواعد بيانات ضخمة.
-5.  **التوثيق:** وجود نظام تسجيل أحداث (Logs) لمراقبة الأداء واكتشاف الأخطاء.
+4.  **الأداء:** البحث الشعاعي عبر **ChromaDB** يضمن سرعة استرجاع عالية ودقة في فهم المعنى الدلالي.
+5.  **التوثيق:** وجود نظام تسجيل أحداث (Logs) شامل لمراقبة العمليات واكتشاف الأخطاء فورياً.
+6.  **تعدد اللغات:** دعم حقيقي وشامل للغتين العربية والإنجليزية في كل مراحل النظام.
