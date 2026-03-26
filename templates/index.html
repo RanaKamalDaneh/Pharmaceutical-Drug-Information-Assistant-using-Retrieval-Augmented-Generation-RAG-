@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaAssist | AI Medical Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <i class="fas fa-prescription-bottle-medical logo-icon"></i>
+            <h1>PharmaAssist AI</h1>
+        </div>
+        <div class="header-tools">
+            <span class="status-badge"><i class="fas fa-shield-virus"></i> Official FDA Data Source</span>
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3><i class="fas fa-info-circle"></i> About PharmaAssist</h3>
+                <p style="font-size: 0.85rem; color: #666; line-height: 1.4;">
+                    Professional AI system for pharmaceutical information. Supports English & Arabic medical queries using RAG technology.
+                </p>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-language"></i> Language Support</h3>
+                <p style="font-size: 0.85rem; color: #666;">English / العربية</p>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-history"></i> Quick Tips</h3>
+                <ul style="font-size: 0.8rem; color: #666; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--medical-green);"></i> Ask about drug dosages.</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--medical-green);"></i> Check for side effects.</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--medical-green);"></i> Verify safety warnings.</li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="chat-container">
+            <div id="chat-window">
+                <!-- Welcome Message removed -->
+            </div>
+
+            <div class="loading" id="loading-indicator">
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Type your medical query here..." autocomplete="off">
+                <button id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

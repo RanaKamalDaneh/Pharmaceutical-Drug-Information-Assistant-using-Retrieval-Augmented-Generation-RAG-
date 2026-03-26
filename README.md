@@ -58,14 +58,17 @@ DRUG_API_URL=https://api.fda.gov/drug/label.json?limit=100
 ```
 
 ### 4. Running the System (التشغيل)
-Build the database for the first time:
+#### Option A: Web Interface (Recommended)
 ```bash
-python app.py --rebuild
+python web_app.py
 ```
-Start chatting:
+Then open your browser at `http://localhost:5000`
+
+#### Option B: CLI Interface
 ```bash
 python app.py
 ```
+*(Use `--rebuild` on the first run to build the database)*.
 
 ---
 

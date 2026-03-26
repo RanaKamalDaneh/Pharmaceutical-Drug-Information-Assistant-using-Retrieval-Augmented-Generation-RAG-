@@ -30,3 +30,13 @@ pip install -r requirements.txt
 python app.py --rebuild
 ```
 سيقوم النظام بجلب البيانات من الـ API، توليد الـ Embeddings، وحفظها في ملف faiss_index.bin .
+
+
+
+
+
+- قم بتشغيل خادم الويب:
+```
+python web_app.py
+```
+- افتح المتصفح وانتقل إلى الرابط:
