@@ -6,6 +6,17 @@ venv/
 
 # استبعاد قاعدة البيانات الشعاعية (يفضل بناؤها محلياً)
 chroma_db/
+chroma_db_v2/
+chroma_db_v3/
+
+# استبعاد ملفات الاختبار المؤقتة
+cold_flu_test_result.txt
+test_output.txt
+verify_stats.py
+debug_retrieval.py
+search_data.py
+check_db_content.py
+test_final.py
 
 # استبعاد ملفات النظام والمؤقتة
 *.log

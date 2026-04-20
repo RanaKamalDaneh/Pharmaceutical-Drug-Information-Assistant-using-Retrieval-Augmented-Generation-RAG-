@@ -52,7 +52,7 @@ class PharmaceuticalRAG:
 
         # 2. Retrieve relevant chunks
         # Increased K for more context and better synthesis
-        relevant_chunks = self.vector_store.search(query_embedding, k=10)
+        relevant_chunks = self.vector_store.search(query_embedding, k=20)
         
         # 3. Generate answer
         answer = self.llm.generate_answer(query, relevant_chunks)

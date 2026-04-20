@@ -50,8 +50,8 @@ class LLMInterface:
 
         try:
             if self.provider == "openai":
-                # Using gpt-4o for stronger, more professional answers if available, otherwise fallback
-                model_to_use = "gpt-4o" 
+                # Using configured model for OpenAI
+                model_to_use = Config.OPENAI_MODEL
                 response = self.client.chat.completions.create(
                     model=model_to_use,
                     messages=[

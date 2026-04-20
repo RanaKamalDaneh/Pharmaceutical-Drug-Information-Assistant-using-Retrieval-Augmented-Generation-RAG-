@@ -15,8 +15,8 @@ class Config:
     BILINGUAL_DATA = os.path.join(DATA_DIR, "bilingual_drugs.json")
     
     # Vector Store
-    CHROMA_PATH = os.path.join(PROJECT_ROOT, "chroma_db")
-    COLLECTION_NAME = "pharmaceutical_drugs"
+    CHROMA_PATH = os.path.join(PROJECT_ROOT, "chroma_db_v3")
+    COLLECTION_NAME = "pharmaceutical_drugs_v3"
     
     # Embedding Model
     # Provider: 'ollama' or 'openai'
@@ -27,6 +27,7 @@ class Config:
     # LLM (OpenAI or Ollama)
     LLM_PROVIDER = os.getenv("LLM_PROVIDER", "ollama")
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
     OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
 
     # Data API

@@ -45,5 +45,18 @@
     "side_effects_ar": "اضطراب المعدة، حرقة الفؤاد، الغثيان",
     "warnings_en": "Do not use in children with viral infections due to Reye's syndrome risk",
     "warnings_ar": "لا يستخدم للأطفال المصابين بعدوى فيروسية بسبب خطر الإصابة بمتلازمة راي"
+  },
+  {
+    "drugbank_id": "DB00111",
+    "name_en": "Cold and Flu Treatment",
+    "name_ar": "علاج الزكام والرشح والبرد والإنفلونزا",
+    "indications_en": "Relief of symptoms associated with the common cold and influenza, including nasal congestion, sore throat, cough, and fever.",
+    "indications_ar": "تخفيف الأعراض المصاحبة للزكام والإنفلونزا والبرد والرشح، بما في ذلك احتقان الأنف، التهاب الحلق، السعال، والحمى.",
+    "dosage_en": "Varies by specific medication. Generally includes rest, plenty of fluids, and OTC pain relievers like Paracetamol or Ibuprofen.",
+    "dosage_ar": "يختلف حسب الدواء المحدد. يشمل عموماً الراحة التامة، شرب الكثير من السوائل، واستخدام مسكنات الألم المتاحة بدون وصفة مثل الباراسيتامول أو الإيبوبروفين.",
+    "side_effects_en": "Drowsiness (if containing antihistamines), dry mouth, dizziness.",
+    "side_effects_ar": "النعاس (إذا كان يحتوي على مضادات الهيستامين)، جفاف الفم، الدوار.",
+    "warnings_en": "Consult a doctor if symptoms persist for more than 7 days or if high fever develops.",
+    "warnings_ar": "استشر الطبيب إذا استمرت الأعراض لأكثر من 7 أيام أو إذا ظهرت حمى شديدة."
   }
 ]
